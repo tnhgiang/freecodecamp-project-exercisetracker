@@ -8,6 +8,7 @@ require('dotenv').config();
 // Connect to database
 require('./exercisetracker/models/index');
 const userRoute = require('./exercisetracker/routes/users.route');
+const exerciseRoute = require('./exercisetracker/routes/exercises.route');
 
 // Middleware
 app.use(cors());
@@ -23,5 +24,6 @@ app.get('/', (req, res) => {
 
 // Routers
 app.use('/api/', userRoute);
+app.use('/api/', exerciseRoute);
 
 module.exports = app;
